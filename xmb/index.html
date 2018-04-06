@@ -3,27 +3,38 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>XMB ripoff</title>
-  
-  
+  <title>XMB</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable =no">
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons|Roboto'>
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/snarl.min.css">
 <style>
-	#myVideo {
-	    position: fixed;
-	    right: 0;
-	    bottom: 0;
-	    min-width: 100%; 
-	    min-height: 100%;
-	}
-	</style>
+	
+body, html {
+    height: 100%;
+    margin: 0;
+}
 
-	<video autoplay muted loop id="myVideo">
-	  <source src="xmb.mp4" type="video/mp4">
-	</video>
+.bg {
+    /* The image used */
+    background-image: url("wallpaper.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+
+
+<div class="bg"></div>
 </head>
 
 <body>
