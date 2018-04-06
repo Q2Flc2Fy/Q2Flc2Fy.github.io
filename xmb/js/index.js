@@ -187,7 +187,23 @@ $('body').on('keyup', function (e) {
     xmbVue.handleKey('x', 1);
   }
 });
-
+// mobile support
+$('body').on("swipeleft",function(){
+	audio.play();
+    xmbVue.handleKey('x', -1);
+});
+$('body').on("swiperight",function(){
+	audio.play();
+    xmbVue.handleKey('x', 1);
+});
+$('body').on("swipeup",function(){
+	audio.play();
+    xmbVue.handleKey('y', -1);
+});
+$('body').on("swipedown",function(){
+	audio.play();
+    xmbVue.handleKey('y', 1);
+});
 $('body').on("mousewheel", _.throttle(scrollHandler, 10));
 
 function scrollHandler(e) {
