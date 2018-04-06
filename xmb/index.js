@@ -188,21 +188,20 @@ $('body').on('keyup', function (e) {
   }
 });
 // mobile support
-$('body').on("swipeleft",function(){
-	audio.play();
+$('body').on('keyup', function (e) {
+  if (e.key == "swipeleft") {
+  	audio.play();
     xmbVue.handleKey('x', -1);
-});
-$('body').on("swiperight",function(){
-	audio.play();
+  } else if (e.key == "swiperight") {
+  	audio.play();
     xmbVue.handleKey('x', 1);
-});
-$('body').on("swipeup",function(){
-	audio.play();
+  } else if (e.key == "swipeup") {
+  	audio.play();
     xmbVue.handleKey('y', -1);
-});
-$('body').on("swipedown",function(){
+  } else if (e.key == "swipedown") {
 	audio.play();
     xmbVue.handleKey('y', 1);
+  }
 });
 $('body').on("mousewheel", _.throttle(scrollHandler, 10));
 
