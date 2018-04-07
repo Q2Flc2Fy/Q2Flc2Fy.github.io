@@ -20,7 +20,7 @@ var model = {
       icon: "img/Icons.35.png",
       items:[
           {title: "★ Version check", subtitle: 'Display the application version', active: false, icon: "img/Icons.3.png", href: 'javascript:alertnow();'},
-	  {title: "Settings", subtitle: 'Change app settings (Coming Soon)', active: false, icon: "img/Icons.3.png", href: 'javascript:alertnow();'},
+	  {title: "Settings", subtitle: 'Change app settings (Coming Soon)', active: false, icon: "img/Icons.3.png", href: 'javascript:alertnow();'}
         ]
     },
     "explore": {
