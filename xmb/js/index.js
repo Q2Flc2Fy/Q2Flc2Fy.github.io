@@ -1,15 +1,10 @@
 var ICON_SIZE = 100;
 var PADDING = 10;
 var audio = new Audio('js/sound.mp3');
-function alertnow() {
-    Snarl.addNotification({
-           title: 'XMB Version: .01b',
-           text: 'This is a test notification that displays the version string.',
-        icon: '<i class="fa fa-globe"></i>'
-		
-       });
-}
 //todo: pull model from XHR or some
+function alertnow() {
+	alert ("version 0.2b");
+}
 
 var model = {
   cursor: {
@@ -22,42 +17,22 @@ var model = {
       title: "settings",
       selectedIndex: 0,
       active: false,
-      icon: "settings",
-      items: [{ title: "info", subtitle: "subtitle", active: false, icon: "info" }, { title: "grade", subtitle: "subtitle", active: false, icon: "grade" }, { title: "toll", subtitle: "subtitle", active: false, icon: "toll" }, { title: "info", subtitle: "subtitle", active: false, icon: "info" }, { title: "Ver", subtitle: "version", active: false, icon: "grade", href: "javascript:alertnow();" }, { title: "Google", subtitle: "Google", active: false, icon: "toll", href: "https://google.com" }]
+      icon: "img/Icons.35.png",
+      items:[
+          {title: "	★ Version check", subtitle: 'Display application version', active: false, icon: "img/Icons.3.png", href: 'javascript:alertnow();'},
+        ]
     },
     "explore": {
       index: 1,
-      title: "explore",
+      title: "★ Package Files",
       selectedIndex: 1,
       active: false,
-      icon: "explore",
-      items: [{ title: "face", subtitle: "subtitle", active: false, icon: "face" }, { title: "favorite", subtitle: "subtitle", active: false, icon: "favorite" }]
-    },
-    "play_arrow": {
-      index: 2,
-      title: "play_arrow",
-      selectedIndex: 1,
-      active: false,
-      icon: "play_arrow",
-      items: [{ title: "edit", subtitle: "subtitle", active: false, icon: "edit" }, { title: "gesture", subtitle: "subtitle", active: false, icon: "gesture" }]
-    },
-    "settings2": {
-      index: 3,
-      title: "aa",
-      selectedIndex: 0,
-      active: false,
-      icon: "settings",
-      items: [{ title: "info", subtitle: "subtitle", active: false, icon: "info" }, { title: "grade", subtitle: "subtitle", active: false, icon: "grade" }, { title: "toll", subtitle: "subtitle", active: false, icon: "toll" }]
-    },
-    "settings4": {
-      index: 4,
-      title: "bb",
-      selectedIndex: 0,
-      active: false,
-      icon: "settings",
-      items: [{ title: "info", subtitle: "subtitle", active: false, icon: "info"}, { title: "grade", subtitle: "subtitle", active: false, icon: "grade" }, { title: "toll", subtitle: "subtitle", active: false, icon: "toll" }]
-    }
-  }
+      icon: "img/Icons.8.png",
+      items:[
+          {title:"TweakBox",subtitle:"[Homebrew] Mobileconfig file.",active:false,icon:"img/Icons.2.png",href:"https://nyc3.digitaloceanspaces.com/tweakbox/TweakBox.mobileconfig"}
+        ]
+	}
+}
 
   //add zero position to each column and item
 };_.each(model.columns, function (c) {
@@ -185,24 +160,33 @@ $('body').on('keyup', function (e) {
   } else if (e.key == "ArrowRight") {
 	audio.play();
     xmbVue.handleKey('x', 1);
+  } else if (e.key == "Enter") {
+	audio.play();
+    xmbVue.highlightCell(xmbVue.nColumns, xmbVue.nRows)
   }
 });
-// mobile support
-$('body').on("swipeleft",function(){
-	audio.play();
-    xmbVue.handleKey('x', -1);
+var myElement = document.body;
+var hammertime = new Hammer(myElement);
+hammertime.on('swipeleft', function(ev) {
+  	audio.play();
+	xmbVue.handleKey('x', 1);     
 });
-$('body').on("swiperight",function(){
-	audio.play();
-    xmbVue.handleKey('x', 1);
+hammertime.on('swiperight', function(ev) {
+	xmbVue.handleKey('x', -1);     
 });
-$('body').on("swipeup",function(){
-	audio.play();
-    xmbVue.handleKey('y', -1);
-});
-$('body').on("swipedown",function(){
-	audio.play();
+$('body').swipe( {
+  swipeUp:function(event, direction, distance, duration) {
+    	audio.play();
     xmbVue.handleKey('y', 1);
+  },
+  swipeDown:function(event, direction, distance, duration) {
+    	audio.play();
+    xmbVue.handleKey('y', -1); 
+  },
+  click:function(event, target) { 
+  },
+  threshold:100,
+  allowPageScroll:"vertical"
 });
 $('body').on("mousewheel", _.throttle(scrollHandler, 10));
 
@@ -214,6 +198,6 @@ function scrollHandler(e) {
   }
   if (e.deltaY) {
     xmbVue.handleKey('y', Math.sign(e.deltaY));
-	audio.play();p
+	audio.play();
   }
 }

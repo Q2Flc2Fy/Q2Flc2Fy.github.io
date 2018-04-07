@@ -9,7 +9,7 @@ var model = {
         y:0
     },
     columns:{
-      "settings":{
+      "Genders":{
         index:0,
         title:"settings",
         selectedIndex:0,
@@ -23,50 +23,43 @@ var model = {
           {title:"toll",subtitle:"subtitle",active:false,icon:"toll"}
         ]
       },
-      "explore":{
+      "Orientations":{
         index:1,
         title:"explore",
         selectedIndex:1,
         active:false,
         icon:"explore",
         items:[
-          {title:"face",subtitle:"subtitle",active:false,icon:"face"},
-          {title:"favorite",subtitle:"subtitle",active:false,icon:"favorite"}
+          {title:"Aromantic",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Asexual",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Biromantic",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Bisexual",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Ceteroromantic",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Ceterosexual",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Demiromantic",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Demisexual",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Gray-Aromantic",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Gray-Asexual",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Homoflexible",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Homoromantic",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Homosexual",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Muliromantic",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Mulisexual",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Panromantic",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Pansexual",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Polyamorous",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Viroromantic",subtitle:"subtitle",active:false,icon:"face"},
+          {title:"Virosexual",subtitle:"subtitle",active:false,icon:"face"}
         ]
       },
-      "play_arrow":{
+      "Pronouns":{
         index:2,
         title:"play_arrow",
         selectedIndex:1,
         active:false,
         icon:"play_arrow",
         items:[
-          {title:"edit",subtitle:"subtitle",active:false,icon:"edit"},
-          {title:"gesture",subtitle:"subtitle",active:false,icon:"gesture"}
-        ]
-      },
-      "settings2":{
-        index:3,
-        title:"aa",
-        selectedIndex:0,
-        active:false,
-        icon:"settings",
-        items:[
-          {title:"info",subtitle:"subtitle",active:false,icon:"info"},
-          {title:"grade",subtitle:"subtitle",active:false,icon:"grade"},
-          {title:"toll",subtitle:"subtitle",active:false,icon:"toll"}
-        ]
-      },
-      "settings4":{
-        index:4,
-        title:"bb",
-        selectedIndex:0,
-        active:false,
-        icon:"settings",
-        items:[
-          {title:"info",subtitle:"subtitle",active:false,icon:"info"},
-          {title:"grade",subtitle:"subtitle",active:false,icon:"grade"},
-          {title:"toll",subtitle:"subtitle",active:false,icon:"toll"}
+          {title:"Enter",subtitle:"subtitle",active:false,icon:"edit"}
         ]
       }
     }

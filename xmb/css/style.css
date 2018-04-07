@@ -95,15 +95,19 @@ body {
   text-align: center;
   width: 100%;
   font-size: 65px;
+  line-height: 0
+  left: 30px;
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 #xmb label {
   display: block;
   text-align: center;
   text-shadow: 0px 0px 5px #000000;
-  font-size: 20px;
+  font-size: 15px;
   text-transform: capitalize;
   cursor: pointer;
+  white-space: nowrap;
+  
 }
 #xmb .cell.submenu,
 #xmb .cell.submenu > * {
@@ -114,14 +118,15 @@ body {
   top: 0;
   line-height: 50px;
   margin-left: 100px;
-  font-size: 30px;
+  font-size: 20px;
 }
 #xmb .submenu label.subtitle {
   position: absolute;
   top: 55px;
   margin-left: 0;
-  font-size: 19px;
+  font-size: 15px;
   line-height: 0;
+  white-space: nowrap;
 }
 a {
   color: inherit;

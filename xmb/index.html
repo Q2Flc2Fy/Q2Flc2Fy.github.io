@@ -6,7 +6,7 @@
   <title>XMB</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable =no">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons|Roboto'>
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -43,11 +43,11 @@ body, html {
   <div id="xmb">
     <ul>
       <li class="column" v-for="column,index in columns" v-bind:class="{active:column.active}" v-bind:style="{left:column.position.x+'px'}">
-        <div class="cell" v-bind:class="{active:column.active}" v-on:click="highlightCell(column.index,0)"><i class="material-icons xmb-icon">{{column.icon}}</i>
+        <div class="cell" v-bind:class="{active:column.active}" v-on:click="highlightCell(column.index,0)"><i><center><img :src="column.icon" width="90px" height="90px"></center></i>
           <label>{{column.title}}</label>
         </div>
         <ul>
-          <li class="cell submenu" v-for="item,itemIndex in column.items" v-bind:class="{active:item.active}" v-bind:style="{top:item.position.y+'px'}" v-on:click="highlightCell(column.index,itemIndex)">           <a v-bind:href="item.active?item.href||'#missinglink':'#'"><i class="material-icons xmb-icon">{{item.icon}}</i>
+          <li class="cell submenu" v-for="item,itemIndex in column.items" v-bind:class="{active:item.active}" v-bind:style="{top:item.position.y+'px'}" v-on:click="highlightCell(column.index,itemIndex)">           <a v-bind:href="item.active?item.href||'#missinglink':'#'"><center><img :src="item.icon" width="90px" height="90px"></center></i>
               <label>{{item.title}}
                 <label class="subtitle">{{item.subtitle}}</label>
               </label></a></li>
